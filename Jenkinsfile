@@ -8,6 +8,14 @@ pipeline {
         SERVICE_NAME = "tic-tac-toe"        
     }
         stages {
+                stage('Verify npm') {
+            steps {
+                bat 'where npm'
+                bat 'npm -v'
+                bat 'node -v'
+            }
+        }
+        
         stage('Run Tests') {
             steps {
                 bat "npm test || echo Tests failed (not breaking build)"
