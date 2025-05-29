@@ -7,7 +7,7 @@ pipeline {
         PROJECT_ID = "festive-bloom-461305-f2"  
         SERVICE_NAME = "tic-tac-toe"        
     }
-    {
+        stages {
         stage('Run Tests') {
             steps {
                 bat "npm test || echo Tests failed (not breaking build)"
@@ -37,7 +37,7 @@ pipeline {
                 """
             }
         }
-    }
+} 
 
     post {
         always {
