@@ -36,6 +36,19 @@ The Docker image is tagged and pushed to GCR using the gcloud CLI and service ac
 5. *Deploy to Google Cloud Run*
 Finally, the new image is deployed to Cloud Run, making the app live within seconds.
 
+## commands that I use 
+1. *Build the Docker Image*: docker build -t gcr.io/festive-bloom-461305-f2/tic-tac-toe .
+
+2.  *Test Locally*: docker run -p 5000:5000 gcr.io/festive-bloom-461305-f2/tic-tac-toe
+
+3. *Push Docker Image to Google Container Registry (GCR)*: docker push gcr.io/festive-bloom-461305-f2/tic-tac-toe
+
+4. *Deploy to Google Cloud Run*: gcloud run deploy tic-tac-toe \
+  --image gcr.io/festive-bloom-461305-f2/tic-tac-toe \
+  --platform managed \
+  --region asia-south1 \
+  --allow-unauthenticated
+
 ## What I Learned
 - How to automate deployments with Jenkins
 
